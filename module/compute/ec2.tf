@@ -30,6 +30,8 @@ resource "aws_instance" "web_private" {
   ami           = "<ami_id>"
   instance_type = "t3.micro"
 
+  vpc_security_group_ids = aws_security_group.ec2.id
+  
   subnet_id  = var.private_subnet
   tags = {
     Name = "private_ec2"
