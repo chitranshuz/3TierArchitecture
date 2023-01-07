@@ -17,7 +17,7 @@ terraform {
     # Replace this with your DynamoDB table name!
     dynamodb_table = module.tf-backend.backend_dynamodb
     encrypt        = true
-  }
+ }
 
   required_providers {
     aws = {
