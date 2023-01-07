@@ -11,3 +11,5 @@ variable "private_subnet" {}
 variable "private_subnet_t" {}
 
 variable "vpc_name" {}
+
+variable "privateinstance_ip" {}

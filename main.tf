@@ -29,6 +29,7 @@ terraform {
 
 module "tf-backend" {
     source = "./module/backend"
+    privateinstance_ip = module.compute.privateinstance_ip
 }
 
 module "network"{
