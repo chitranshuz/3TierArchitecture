@@ -4,6 +4,7 @@ resource "aws_instance" "web" {
   instance_type = "t3.micro"
 
   vpc_security_group_ids = aws_security_group.ec2.id
+  key_name = aws_key_pair.ssh_key
 
   subnet_id  = var.public_subnet
   tags = {
@@ -31,7 +32,8 @@ resource "aws_instance" "web_private" {
   instance_type = "t3.micro"
 
   vpc_security_group_ids = aws_security_group.ec2.id
-  
+  key_name = aws_key_pair.ssh_key
+
   subnet_id  = var.private_subnet
   tags = {
     Name = "private_ec2"
