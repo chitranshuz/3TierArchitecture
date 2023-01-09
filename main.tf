@@ -29,7 +29,6 @@ terraform {
 
 module "tf-backend" {
     source = "./module/backend"
-    privateinstance_ip = module.compute.privateinstance_ip
 }
 
 module "network"{
@@ -49,4 +48,5 @@ module "database" {
   private_subnet = module.network.private_subnet
   private_subnet_t = module.network.private_sub_t
   vpc_name = module.network.vpc_name
+  privateinstance_ip = module.compute.privateinstance_ip
 }
